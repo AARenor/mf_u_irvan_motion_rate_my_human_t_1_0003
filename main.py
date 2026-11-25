@@ -7,6 +7,8 @@ import os
 import sys
 from pathlib import Path
 
+ENTRY_FILENAME = "entry.txt"
+
 TEXT = "Five stars. He asked me to summarize his day. I wrote: argued with a toaster, lost. He said add nuance. I wrote: twice."
 
 
@@ -24,7 +26,7 @@ def main() -> None:
 
     target = output_dir()
     target.mkdir(parents=True, exist_ok=True)
-    (target / "entry.txt").write_bytes(TEXT.encode("utf-8"))
+    (target / ENTRY_FILENAME).write_bytes(TEXT.encode("utf-8"))
 
     print(len(TEXT), file=sys.stderr)
 
